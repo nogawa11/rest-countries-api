@@ -10,7 +10,8 @@ header {
   display: flex;
   justify-content: space-between;
   color: white;
-  padding: 0 24px;
+  padding: 12px 60px;
+  font-size: 12px;
 }
 
 .btn-mode {
@@ -18,4 +19,55 @@ header {
   color: white;
   border: 0;
   font-family: inherit;
+}
+
+.search {
+  background-color: hsl(209, 23%, 22%);
+  display: flex;
+  width: 400px;
+  height: 50px;
+  border-radius: 4px;
+  color: white;
+  align-items: center;
+  box-shadow: 0 0 12px 0px rgba(22, 22, 24, 0.15);
+}
+
+.search > input {
+  background-color: hsl(209, 23%, 22%);
+  border: 0;
+  margin-left: 16px;
+}
+
+.search > input::placeholder {
+  color: white;
+}
+
+.search > svg {
+  margin-left: 16px;
+}
+
+.search-field {
+  display: flex;
+  margin: 32px 60px;
+  justify-content: space-between;
+}
+
+.filter {
+  background-color: hsl(209, 23%, 22%);
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  height: 50px;
+  border-radius: 4px;
+  color: white;
+  align-items: center;
+  box-shadow: 0 0 12px 0px rgba(22, 22, 24, 0.15);
+  padding: 0 16px;
+}
+
+.btn-filter {
+  background-color: hsl(209, 23%, 22%);
+  color: white;
+  margin-right: 16px;
+  border: 0;
 }
