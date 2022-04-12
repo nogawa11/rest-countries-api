@@ -36,6 +36,8 @@ header {
   background-color: hsl(209, 23%, 22%);
   border: 0;
   margin-left: 16px;
+  width: 90%;
+  height: 90%;
 }
 
 .search > input::placeholder {
