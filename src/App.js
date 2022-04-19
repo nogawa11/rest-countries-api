@@ -4,14 +4,12 @@ import Search from './components/Search'
 import CountriesProvider from './components/CountriesProvider'
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Search />
-      <CountriesProvider>
-
-      </CountriesProvider>
+      <CountriesProvider />
     </div>
   );
 }

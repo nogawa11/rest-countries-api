@@ -73,3 +73,46 @@ header {
   margin-right: 16px;
   border: 0;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 60px;
+  gap: 24px;
+}
+
+.card--country {
+  background-color: hsl(209, 23%, 22%);
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 0px rgba(22, 22, 24, 0.15);
+}
+
+.card--country > img {
+  height: 175px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.card--text {
+  margin: 18px;
+}
+
+.card--text > h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  color: white;
+}
+
+.card--text > p {
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  color: rgb(214, 214, 214);
+  letter-spacing: 1px;
+}
+
+.bold {
+  font-weight: 700;
+}

@@ -1,48 +1,40 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React from 'react';
+import Country from './Country'
+import { nanoid } from "nanoid";
 
-const CountryContext = React.createContext({});
+export default function CountriesProvider() {
+  const [countries, setCountries] = React.useState([]);
+  const [state, setState] = React.useState('loading');
 
-export const CountriesProvider = ({ children }) => {
-  const [countries, setCountries] = useState(null);
-  const [state, setState] = useState('loading');
-
-  const findCountry = useCallback(
-    (name) => {
-      if (!countries) return;
-      return countries.find((country) => country.name.common === name);
-    },
-    [countries]
-  )
-
-  useEffect(() => {
-    (async () => {
+  React.useEffect(() => {
+    async function getCountries() {
       try {
-        const response = await fetch(
-          'https://restcountries.com/v3.1/all'
-        );
+        const response = await fetch('https://restcountries.com/v3.1/all')
         const data = await response.json();
-        console.log(data)
-        const sortedData = data.sort((a, b) => b.name.common - a.name.common);
-        setCountries(sortedData);
-        setState('resolved');
+        setCountries(data)
       } catch (err) {
         setState('error');
-        console.log(err)
+        console.log(err);
       }
-    })();
+    }
+    getCountries()
   }, []);
 
-  return <CountryContext.Provider value={{ countries, findCountry, state }}>{children}</CountryContext.Provider>;
+  const countryElements = countries.map((country) => {
+    return <Country
+      key={country.id}
+      id={country.id}
+      name={country.name.common}
+      region={country.region}
+      population={country.population}
+      capital={country.capital}
+      flag={country.flags.png}
+    />
+  })
+
+  return (
+    <div className="cards">
+      {countryElements}
+    </div>
+  )
 };
-
-const useCountries = () => {
-  const { countries, findCountry, state } = useContext(CountryContext);
-
-  return {
-    countries,
-    findCountry,
-    state,
-  };
-};
-
-export default useCountries;
