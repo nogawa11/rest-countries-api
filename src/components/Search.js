@@ -108,7 +108,7 @@ const Search = () => {
             </label>
         </form>
       </div>
-        <div className="cards">
+      <div className="cards">
         {search || filter ? list : countryElements}
       </div>
     </div>

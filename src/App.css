@@ -147,17 +147,22 @@ header {
   border-radius: 8px;
   box-shadow: 0 0 12px 0px rgba(22, 22, 24, 0.15);
   cursor: pointer;
+  transition: all ease 0.2s;
 }
 
 .card--country:hover {
   transform: scale(1.05);
 }
 
-.card--country > img {
+.card--country > a > img {
   height: 175px;
   width: 100%;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
+}
+
+.card--country > a {
+  text-decoration: none;
 }
 
 .card--text {
