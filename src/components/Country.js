@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Country(props) {
   return (
     <div className="card--country">
-      <Link to={`country/${props.common}`}>
+      <Link to={`country/${props.name}`}>
         <img src={props.flag} alt="flag" />
         <div className="card--text">
           <h3>{props.name}</h3>
