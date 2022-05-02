@@ -9,6 +9,7 @@ body, html, #root {
   font-family: 'Nunito Sans', sans-serif;
   height: 100%;
   transition: all ease 0.5s;
+  overflow: scroll;
 }
 .app.light {
   background-color: hsl(0, 0%, 96%);
