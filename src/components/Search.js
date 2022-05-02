@@ -27,13 +27,6 @@ const Search = () => {
     getCountries()
   }, []);
 
-  React.useEffect(() => {
-    function getCountries() {
-
-    }
-    getCountries()
-  }, []);
-
   const countryElements = countries.map((country) => {
     return <Country
       key={nanoid()}
@@ -108,9 +101,9 @@ const Search = () => {
             </label>
         </form>
       </div>
-      <div className="cards">
-        {search || filter ? list : countryElements}
-      </div>
+        <div className="cards">
+          {search || filter ? list : countryElements}
+        </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header'
 import Search from './components/Search'
-import Country from './components/Country'
+import CountryDetails from './components/CountryDetails'
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Search />} />
-        <Route path="country/:name" element={<Country />} />
+        <Route path="country/:name" element={<CountryDetails />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </div>
