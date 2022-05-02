@@ -1,9 +1,9 @@
-import './App.css';
-import Header from './components/Header';
-import Search from './components/Search';
-import CountryDetails from './components/CountryDetails';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import React from 'react';
+import "./App.css";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import CountryDetails from "./components/CountryDetails";
+import { Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = React.useState(true);

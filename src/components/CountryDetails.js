@@ -1,24 +1,24 @@
-import { useParams } from 'react-router';
-import React from 'react';
-import BorderCountry from './BorderCountry'
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { useParams } from "react-router";
+import React from "react";
+import BorderCountry from "./BorderCountry"
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const CountryDetails = () => {
   const { name } = useParams();
   let navigate = useNavigate();
   const [countries, setCountries] = React.useState([]);
-  const [state, setState] = React.useState('loading');
+  const [state, setState] = React.useState("loading");
 
   React.useEffect(() => {
     async function getCountries() {
       try {
-        const response = await fetch('https://restcountries.com/v3.1/all')
+        const response = await fetch("https://restcountries.com/v3.1/all")
         const data = await response.json();
         setCountries(data)
       } catch (err) {
-        setState('error');
+        setState("error");
         console.log(err);
       }
     }
@@ -57,16 +57,40 @@ const CountryDetails = () => {
             <h1>{country.name.common}</h1>
               <div className="country--column">
                 <div>
-                  <p><strong>Native Name:</strong> <span className="country--text">{Object.values(country.name.nativeName)[0]?.official}</span></p>
-                  <p><strong>Population:</strong> <span className="country--text">{country.population.toLocaleString() || "N/A"}</span></p>
-                  <p><strong>Region:</strong> <span className="country--text">{country.region || "N/A"}</span></p>
-                  <p><strong>Sub Region:</strong> <span className="country--text">{country.subregion || "N/A"}</span></p>
-                  <p><strong>Capital:</strong> <span className="country--text">{country.capital || "N/A"}</span></p>
+                  <p>
+                    <strong>Native Name:</strong>
+                    <span className="country--text">{Object.values(country.name.nativeName)[0]?.official}</span>
+                  </p>
+                  <p>
+                    <strong>Population:</strong>
+                    <span className="country--text">{country.population.toLocaleString() || "N/A"}</span>
+                  </p>
+                  <p>
+                    <strong>Region:</strong>
+                    <span className="country--text">{country.region || "N/A"}</span>
+                  </p>
+                  <p>
+                    <strong>Sub Region:</strong>
+                    <span className="country--text">{country.subregion || "N/A"}</span>
+                  </p>
+                  <p>
+                    <strong>Capital:</strong>
+                    <span className="country--text">{country.capital || "N/A"}</span>
+                  </p>
                 </div>
                 <div>
-                <p><strong>Top Level Domain:</strong> <span className="country--text">{country.tld || "N/A"}</span></p>
-                <p><strong>Currencies:</strong> <span className="country--text">{prepareCurrencies(country.currencies) || "N/A"}</span></p>
-                <p><strong>Languages:</strong> <span className="country--text">{prepareLanguages(country.languages) || "N/A"}</span></p>
+                <p>
+                  <strong>Top Level Domain:</strong>
+                  <span className="country--text">{country.tld || "N/A"}</span>
+                </p>
+                <p>
+                  <strong>Currencies:</strong>
+                  <span className="country--text">{prepareCurrencies(country.currencies) || "N/A"}</span>
+                </p>
+                <p>
+                  <strong>Languages:</strong>
+                  <span className="country--text">{prepareLanguages(country.languages) || "N/A"}</span>
+                </p>
                 </div>
               </div>
             {country.borders ?
@@ -82,12 +106,15 @@ const CountryDetails = () => {
       });
 
   return (
-    <>
-      <div onClick={handleBackButton} className="button--back">
-        <FontAwesomeIcon icon = {faArrowLeft} /> <span className="button--back-text">Back</span>
+    <div className="section--country-details">
+      <div className="page">
+        <div onClick={handleBackButton} className="button--back">
+          <FontAwesomeIcon icon = {faArrowLeft} />
+          <span className="button--back-text">Back</span>
+        </div>
+        {countryInfo}
       </div>
-      {countryInfo}
-    </>
+    </div>
   )
 }
 
