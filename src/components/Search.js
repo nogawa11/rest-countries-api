@@ -93,7 +93,7 @@ const Search = () => {
               <label name="africa">Africa
                 <input name="filter" type="radio" value="Africa" onChange={handleFilter}/>
               </label>
-              <label name="america">America
+              <label name="americas">America
                 <input name="filter" type="radio" value="America" onChange={handleFilter}/>
               </label>
               <label name="asia">Asia
