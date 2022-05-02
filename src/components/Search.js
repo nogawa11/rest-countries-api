@@ -63,7 +63,7 @@ const Search = () => {
           region={country.region}
           population={country.population}
           capital={country.capital}
-          flag={country.flags.png}
+          flag={country.flags.svg}
         />
       });
 

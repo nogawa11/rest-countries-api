@@ -57,16 +57,16 @@ const CountryDetails = () => {
             <h1>{country.name.common}</h1>
               <div className="country--column">
                 <div>
-                  <p><strong>Native Name:</strong> {Object.values(country.name.nativeName)[0]?.official}</p>
-                  <p><strong>Population:</strong> {country.population || "N/A"}</p>
-                  <p><strong>Region:</strong> {country.region || "N/A"}</p>
-                  <p><strong>Sub Region:</strong> {country.subregion || "N/A"}</p>
-                  <p><strong>Capital:</strong> {country.capital || "N/A"}</p>
+                  <p><strong>Native Name:</strong> <span className="country--text">{Object.values(country.name.nativeName)[0]?.official}</span></p>
+                  <p><strong>Population:</strong> <span className="country--text">{country.population.toLocaleString() || "N/A"}</span></p>
+                  <p><strong>Region:</strong> <span className="country--text">{country.region || "N/A"}</span></p>
+                  <p><strong>Sub Region:</strong> <span className="country--text">{country.subregion || "N/A"}</span></p>
+                  <p><strong>Capital:</strong> <span className="country--text">{country.capital || "N/A"}</span></p>
                 </div>
                 <div>
-                <p><strong>Top Level Domain:</strong> {country.tld || "N/A"}</p>
-                <p><strong>Currencies:</strong> {prepareCurrencies(country.currencies) || "N/A"}</p>
-                <p><strong>Languages:</strong> {prepareLanguages(country.languages) || "N/A"}</p>
+                <p><strong>Top Level Domain:</strong> <span className="country--text">{country.tld || "N/A"}</span></p>
+                <p><strong>Currencies:</strong> <span className="country--text">{prepareCurrencies(country.currencies) || "N/A"}</span></p>
+                <p><strong>Languages:</strong> <span className="country--text">{prepareLanguages(country.languages) || "N/A"}</span></p>
                 </div>
               </div>
             {country.borders ?
