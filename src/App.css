@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-body {
+.app {
+  transition: all ease 0.5s;
   font-family: 'Nunito Sans', sans-serif;
   background-color: hsl(207, 26%, 17%);
   transition: all ease 0.5s;
+  height: 100vh;
+}
+
+.app.light {
+  background-color: hsl(0, 0%, 96%);
 }
 
 header {
@@ -20,12 +26,30 @@ header {
   color: rgb(250, 248, 248);
 }
 
-.btn-mode {
+.btn--mode {
   background: none;
   color: rgb(250, 248, 248);
   border: 0;
   font-family: inherit;
   font-weight: 600;
+  cursor: pointer
+}
+
+.icon--mode {
+  margin-right: 4px;
+}
+
+.app.light header {
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 0 12px 0px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .header a {
+  color: rgb(34, 34, 34);
+}
+
+.app.light .btn--mode {
+  color: rgb(34, 34, 34);
 }
 
 .search {
@@ -66,9 +90,26 @@ header {
   justify-content: space-between;
 }
 
-.search-field.hide .filter{
+.search-field.hide .filter {
   border-radius: 4px;
   box-shadow: 0 0 12px 0px rgba(22, 22, 24, 0.15);
+}
+
+.app.light .search {
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .search, .app.light .search > input {
+  background-color: rgb(250, 248, 248);
+  color: rgb(142, 142, 142);
+}
+
+.app.light .search > input::placeholder {
+  color: rgb(142, 142, 142);
+}
+
+.app.light .search > input[type='text'] {
+  color: rgb(34, 34, 34);
 }
 
 .filter.flip > svg {
@@ -105,6 +146,7 @@ header {
   flex-direction: column;
   width: 182px;
   border-radius: 0 0 4px 4px;
+  cursor: pointer;
 }
 
 .search-field.hide .filter-details{
@@ -137,7 +179,6 @@ header {
   background-color: hsl(208, 20%, 33%);
 }
 
-
 .btn-filter {
   background-color: hsl(209, 23%, 22%);
   color: rgb(250, 248, 248);
@@ -145,6 +186,31 @@ header {
   border: 0;
   font-weight: 600;
   font-family: inherit;
+}
+
+.app.light .filter, .app.light .filter-details, .app.light .btn-filter {
+  background-color: rgb(250, 248, 248);
+  color: rgb(34, 34, 34);
+}
+
+.app.light .search-field .filter {
+  box-shadow: 0px -5px 10px 1px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .search-field.hide .filter {
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .filter-details {
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .filter-details label {
+  color: rgb(34, 34, 34);
+}
+
+.app.light .filter-details label:hover {
+  background-color: rgb(223, 223, 223);
 }
 
 .cards {
@@ -194,6 +260,19 @@ header {
   margin: 0 0 4px 0;
   color: rgb(214, 214, 214);
   letter-spacing: 1px;
+}
+
+.app.light .card--country {
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .card--text > p {
+  color: rgb(63, 63, 63);
+}
+
+.app.light .card--text > h3 {
+  color: rgb(34, 34, 34);
 }
 
 .bold {
@@ -256,6 +335,18 @@ header {
   transform: scale(1.08);
 }
 
+.app.light .country--info > img {
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+}
+
+.app.light .country--info {
+  color: rgb(34, 34, 34);
+}
+
+.app.light .country--text {
+  color:  rgb(79, 79, 79);
+}
+
 .button--back {
   text-decoration: none;
   color: rgb(223, 223, 223);
@@ -276,4 +367,10 @@ header {
 
 .button--back-text {
   margin-left: 8px;
+}
+
+.app.light .button--back, .app.light .country--borders a {
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 0 12px 5px rgba(176, 176, 181, 0.15);
+  color: rgb(34, 34, 34);
 }
