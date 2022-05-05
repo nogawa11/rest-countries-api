@@ -1,4 +1,4 @@
-# Countries App
+# REST Countries API App
 
 A React app that pulls data from the REST Countries V2 API and displays individual country information.
 
